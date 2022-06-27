@@ -1,0 +1,51 @@
+{
+  "settings": [
+    ],
+    
+  "dependencies": {
+    "R": [
+      {
+        "name": "amt"
+      },
+	  {
+        "name": "ggplot"
+      },
+      {
+        "name": "move"
+      }
+    ]
+  },
+  "createsArtifacts": true,
+  "license": {
+    "key": "MIT"
+  },
+  "language": "eng",
+  "keywords": [
+    "summary",
+    "time duration",
+    "fix-interval",
+    "spatio-temporal",
+	  "animal movement"
+  ],
+  "people": [
+    {
+      "firstName": "Nilanjan",
+      "middleInitials": null,
+      "lastName": "Chatterjee",
+      "email": "nchatter@umn.edu",
+      "roles": ["author", "creator"],
+      "orcid": "0000-0002-7932-0191",
+      "affiliation": "University of Minnesota",
+      "affiliationRor": ""
+    }
+		
+  ],
+  "funding": [
+    {
+	"name": "NASA MoveApps Project"
+	}
+  ],
+  "documentation" : {
+    "url": "https://github.com/nilanjanchatterjee/move_summary/blob/main/README.md"
+  }
+}
