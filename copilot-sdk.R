@@ -4,7 +4,8 @@ library(move)
 source("logger.R")
 source("rfunction.R")
 
-inputFileName = "input1_pigeons.rds"
+#inputFileName = "input1_pigeons.rds"
+inputFileName = "input.rds"
 outputFileName = "output.rds"
 
 args<-list()
