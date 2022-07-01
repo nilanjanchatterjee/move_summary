@@ -8,7 +8,7 @@ rFunction <-function(data){
   #make sure that there is a location.long and location.lat in data set
   coo <- data.frame(coordinates(data))
   names(coo) <- c("location.long","location.lat")
-  data_df <- as.data.frame(moveStack(data))
+  data_df <- as.data.frame(data)
   names(data_df) <- make.names(names(data_df),allow_=FALSE)
   data_df <- data.frame(data_df,coo)
 
