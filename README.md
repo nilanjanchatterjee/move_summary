@@ -4,7 +4,7 @@ Moveapps
 Github repository: https://github.com/nilanjanchatterjee/move_summary
 
 ## Description
-The app generates an summary for fix-intervals, number of relocations for each individual_id and a plot for the time interval the collar was active for each individuals in a dataset.
+The app generates a summary for fix-intervals, number of relocations for each individual_id and a plot for the time interval the collar was active for each individuals in a dataset.
 
 ## Documentation
 
