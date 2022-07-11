@@ -46,4 +46,6 @@ write.csv(summary[,-c(3,6)], file= paste0(Sys.getenv(x = "APP_ARTIFACTS_DIR", "/
   
   print(summary_plot)
   dev.off()
+  
+  return(data)
 }
