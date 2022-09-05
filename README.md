@@ -8,7 +8,7 @@ The app generates a summary for fix-intervals, number of relocations for each in
 
 ## Documentation
 
-The output consists of two artefacts, (i) a .csv file with the basic summary statistics (e.g. minimum, maximum, mean, median and sd) of fix intervals and number of relocations for each individual; (ii) a .pdf file with the figure with the time radio-collar was active on each individual.
+The output consists of two artefacts, (i) a .csv file with the start and end of individual track, basic summary statistics (e.g. minimum, maximum, mean, median and sd) of fix intervals and number of relocations for each individual; (ii) a .pdf file with the figure with the time radio-collar was active on each individual.
 
 ## Input data
 
