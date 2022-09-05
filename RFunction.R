@@ -24,15 +24,23 @@ rFunction <-function(data){
     dplyr::select(Individual_id , sr) %>% 
     unnest(cols=sr) 
   
+  for(i in 1:nrow(summary))
+  {sp_data = subset(data_df, data_df$trackId==summary$Individual_id[i])
+  summary[i,11] = min(sp_data$timestamp)
+  summary[i,12] = max(sp_data$timestamp)}
+  
   names(summary) <-c("Individual_id", "Min_fix_interval","Q1_fix_interval" ,"Median_fix_interval",
                      "Mean_fix_interval","Q3_fix_interval","Max_fix_interval","SD_fix_interval",
-                     "Number_of_relocations", "Fix_interval_unit")
+                     "Number_of_relocations", "Fix_interval_unit", "First_relocation", 
+                     "Last_relocation")
   
+  summary <- summary[,c(1, 11,12,9,2:8,10)]
 ##I am dropping the first and third quartile of the fix interval here from the output, 
 ###they can also be included if required
   
 #write.csv(summary[,-c(3,6)], file= "Summary_output.csv")
-write.csv(summary[,-c(3,6)], file= paste0(Sys.getenv(x = "APP_ARTIFACTS_DIR", "/tmp/"),"Fix_interval_summary_output.csv"))
+write.csv(summary[,-c(6,9)], file= paste0(Sys.getenv(x = "APP_ARTIFACTS_DIR", "/tmp/"),"Fix_interval_summary_output.csv"),
+          row.names = FALSE)
   
 #### plotting the time individuals were radio collared
   plot.new()
