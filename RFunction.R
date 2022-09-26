@@ -11,6 +11,8 @@ rFunction <-function(data){
   data_df <- as.data.frame(data)
   names(data_df) <- make.names(names(data_df),allow_=FALSE)
   data_df <- data.frame(data_df,coo)
+  data_df$timestamp<- move::timestamps(data)
+  data_df$trackId<- move::trackId(data)
 
   
 ### Create track for each individual using function from *amt* package
