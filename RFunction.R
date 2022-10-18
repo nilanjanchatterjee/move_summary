@@ -41,13 +41,13 @@ rFunction <-function(data){
 ###they can also be included if required
   
 #write.csv(summary[,-c(3,6)], file= "Summary_output1.csv")
-write.csv(summary[,-c(6,9)], file= paste0(Sys.getenv(x = "APP_ARTIFACTS_DIR", "/tmp/"),"Fix_interval_summary_output.csv"),
-          row.names = FALSE)
+write.csv(summary[,-c(6,9)], file= paste0(Sys.getenv(x = "APP_ARTIFACTS_DIR", "/tmp/"),
+                                          "Fix_interval_summary_output",Sys.Date(), ".csv"), row.names = FALSE)
   
 #### plotting the time individuals were radio collared
   #plot.new()
   #pdf( "Time_summary.pdf")
-  pdf(paste0(Sys.getenv(x = "APP_ARTIFACTS_DIR", "/tmp/"), "Time_summary.pdf"))
+  pdf(paste0(Sys.getenv(x = "APP_ARTIFACTS_DIR", "/tmp/"), "Time_summary", Sys.Date(),".pdf"))
   summary_plot <-ggplot(data_df) +
     geom_point(aes(x = timestamp, y = as.factor(trackId))) +
     labs(x= "Time", y= "Individual_id")+
