@@ -1,10 +1,10 @@
 library(jsonlite)
-library(move)
+library(move2)
 
 source("logger.R")
-source("rfunction.R")
+source("RFunction.R")
 
-#inputFileName = "Input_wolves_latham.rds"
+#inputFileName = "input_move2.rds"
 inputFileName = "input.rds"
 outputFileName = "output.rds"
 
