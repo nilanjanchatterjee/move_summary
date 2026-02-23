@@ -5,7 +5,7 @@ source("logger.R")
 source("RFunction.R")
 
 #inputFileName = "input_move2.rds"
-inputFileName = "input.rds"
+inputFileName = "orni.rds"
 outputFileName = "output.rds"
 
 args<-list()

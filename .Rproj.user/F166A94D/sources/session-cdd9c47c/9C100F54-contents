@@ -1,0 +1,12 @@
+move2_TO_track.xyt <- function(mv2){
+  if(mt_is_move2(mv2)){
+    warning("!!INFO!!: only coordinates, timestamps and track IDs are retained")
+    track(
+      x=sf::st_coordinates(mv2)[,1],
+      y=sf::st_coordinates(mv2)[,2],
+      t=mt_time(mv2),
+      id=mt_track_id(mv2),
+      crs = sf::st_crs(mv2)
+    )
+  }
+}
