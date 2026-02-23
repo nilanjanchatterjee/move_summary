@@ -7,9 +7,13 @@ library(sf)
 
 rFunction <-function(data){
   
+  data_original <- data
+  
   #make sure that there is a location.long and location.lat in data set
   data <- data |> mutate(location.long = sf::st_coordinates(data)[,1],
                          location.lat = sf::st_coordinates(data)[,2],
+                         timestamp = mt_time(data),
+                         sensor_type_id = if("sensor_type_id"%in%names(data)){data$sensor_type_id}else{NA},
                          trackID = mt_track_id(data))
   
   # coo <- data.frame(coordinates(data))
@@ -57,13 +61,12 @@ rFunction <-function(data){
 ###they can also be included if required
   
 #write.csv(summary[,-c(6,9)], file= "Summary_output_new.csv")
-write.csv(summary[,-c(6,9)], file= paste0(Sys.getenv(x = "APP_ARTIFACTS_DIR", "/tmp/"),
-                                          "Fix_interval_summary_output",Sys.Date(), ".csv"), row.names = FALSE)
+write.csv(summary[,-c(6,9)], file= appArtifactPath(paste0("Fix_interval_summary_output",Sys.Date(), ".csv")), row.names = FALSE)
   
 #### plotting the time individuals were radio collared
   #plot.new()
   #pdf( "Time_summary_new.pdf")
-  pdf(paste0(Sys.getenv(x = "APP_ARTIFACTS_DIR", "/tmp/"), "Time_summary", Sys.Date(),".pdf"))
+  pdf(appArtifactPath(paste0("Time_summary_", Sys.Date(),".pdf")))
   summary_plot <-ggplot(data_df) +
     geom_point(aes(x = timestamp, y = as.factor(trackID), col = as.factor(sensor_type_id))) +
     labs(x= "Time", y= "Individual_id", col= "Sensor_id")+
@@ -73,5 +76,5 @@ write.csv(summary[,-c(6,9)], file= paste0(Sys.getenv(x = "APP_ARTIFACTS_DIR", "/
    print(summary_plot)
   dev.off()
   
-  return(data)
+  return(data_original)
 }
