@@ -1,0 +1,2 @@
+"Individual_id","First_relocation","Last_relocation","Number_of_relocations","Min_fix_interval","Median_fix_interval","Mean_fix_interval","Max_fix_interval","SD_fix_interval","Fix_interval_unit","Sensor_type_id"
+"X180059",2020-02-20 18:15:59,2020-06-13 12:29:13,106,0.0749305555555556,1,1.07319990391335,5.06733796296296,0.544555667275348,"day",NA
